@@ -1,0 +1,26 @@
+.carousel-images {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+}
+.carousel-container {
+  width: 100%;
+  align-self: center;
+  margin-left: 100px;
+}
+.each-carousal-image {
+  height: 250px;
+  align-self: center;
+}
+.offers-images-loader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .each-carousal-image {
+    height: 300px;
+  }
+}
