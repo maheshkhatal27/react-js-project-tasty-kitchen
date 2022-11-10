@@ -67,7 +67,7 @@ class Restaurants extends Component {
   }
 
   updateOption = option => {
-    this.setState({sortOption: option}, this.getRestaurants)
+    this.setState({sortOption: option}, this.getRestaurantsList)
   }
 
   onClickDecrementPages = () => {
@@ -77,7 +77,7 @@ class Restaurants extends Component {
         prevState => ({
           activePage: prevState.activePage - 1,
         }),
-        this.getRestaurants,
+        this.getRestaurantsList,
       )
     }
   }
@@ -89,7 +89,7 @@ class Restaurants extends Component {
         prevState => ({
           activePage: prevState.activePage + 1,
         }),
-        this.getRestaurants,
+        this.getRestaurantsList,
       )
     }
   }
@@ -115,13 +115,11 @@ class Restaurants extends Component {
             type="button"
             className="pg-button"
             onClick={this.onClickDecrementPages}
-            testid="pagination-left-button"
+            // testid="pagination-left-button" ,testid="active-page-number" for p
           >
             <RiArrowDropLeftLine size={20} />
           </button>
-          <p testid="active-page-number" className="page-count">
-            {activePage}
-          </p>
+          <p className="page-count">{activePage}</p>
           <span
             className="page-count"
             style={{marginLeft: '5px', marginRight: '5px'}}
@@ -133,7 +131,7 @@ class Restaurants extends Component {
             type="button"
             className="pg-button"
             onClick={this.onClickIncrementPages}
-            testid="pagination-right-button"
+            // testid="pagination-right-button"
           >
             <RiArrowDropRightLine size={20} />
           </button>
@@ -142,8 +140,9 @@ class Restaurants extends Component {
     )
   }
 
+  //  testid="restaurants-list-loader"
   displayLoader = () => (
-    <div className="carousel-loader" testid="restaurants-list-loader">
+    <div className="carousel-loader">
       <Loader type="ThreeDots" color="#F7931E" height={50} width={50} />
     </div>
   )
