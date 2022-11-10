@@ -1,0 +1,76 @@
+.restaurant-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.heading {
+  color: #183b56;
+  font-family: DM Sans;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 0px;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #64748b;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sort {
+  color: #475569;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.select-options {
+  color: #475569;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.option {
+  color: #475569;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .select-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sort-container {
+    justify-content: flex-end;
+  }
+}
