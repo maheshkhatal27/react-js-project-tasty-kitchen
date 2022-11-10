@@ -1,6 +1,8 @@
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Login from './components/Login'
 import HomeRoute from './components/HomeRoute'
+import ProtectedRoute from './components/ProtectedRoute'
+import RestaurantDetailsRoute from './components/RestaurantDetailsRoute'
 import './App.css'
 
 const sortByOptions = [
@@ -19,7 +21,13 @@ const sortByOptions = [
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <Route path="/" component={HomeRoute} />
+    <ProtectedRoute exact path="/" component={HomeRoute} />
+    <ProtectedRoute
+      exact
+      path="/restaurant/:id"
+      component={RestaurantDetailsRoute}
+    />
+    <Redirect to="not-found" />
   </Switch>
 )
 

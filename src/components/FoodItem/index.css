@@ -1,0 +1,88 @@
+.each-food-item {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400px;
+  margin: 15px;
+}
+.food-img {
+  height: 160px;
+  width: 250px;
+  border-radius: 7px;
+}
+.food-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 15px;
+}
+.menu-name {
+  font-family: DM Sans;
+  font-style: normal;
+  font-size: 15px;
+
+  color: #334155;
+  margin: 0px;
+}
+.rupee-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cost {
+  font-family: DM Sans;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  color: #334155;
+}
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rating {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+
+  color: #334155;
+}
+
+.food-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  border: 2px solid #ffa412;
+  color: #ffa412;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 52px;
+  height: 32px;
+  background: none;
+  cursor: pointer;
+}
+.food-item-counter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon-button {
+  background-color: transparent;
+  border-width: 0px;
+}
+.count-item {
+  font-family: DM Sans;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  color: #334155;
+  margin: 0px;
+}
