@@ -27,6 +27,7 @@ class Restaurants extends Component {
     activePage: 1,
     sortOption: sortByOptions[1].value,
     totalPages: 0,
+    searchInput: '',
   }
 
   componentDidMount() {
@@ -35,11 +36,14 @@ class Restaurants extends Component {
 
   getRestaurantsList = async () => {
     this.setState({isLoading: true})
-    const {activePage, sortOption} = this.state
+    const {activePage, sortOption, searchInput} = this.state
     const jwtToken = Cookies.get('jwt_token')
     const limit = 9
     const offset = (activePage - 1) * limit
-    const url = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${limit}&sort_by_rating=${sortOption}`
+    // const url = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${limit}&sort_by_rating=${sortOption}`
+
+    const url = `https://apis.ccbp.in/restaurants-list?search=${searchInput}&offset=${offset}&limit=${limit}&sort_by_rating=${sortOption}`
+
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -48,7 +52,7 @@ class Restaurants extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     const numberOfRestaurants = data.total
     const totalPages = Math.ceil(numberOfRestaurants / limit)
     const formattedData = data.restaurants.map(eachItem => ({
@@ -63,6 +67,7 @@ class Restaurants extends Component {
       restaurantsList: formattedData,
       isLoading: false,
       totalPages,
+      searchInput: '',
     })
   }
 
@@ -94,8 +99,24 @@ class Restaurants extends Component {
     }
   }
 
+  searchChange = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  searchKeyDown = event => {
+    if (event.key === 'Enter') {
+      this.getRestaurantsList()
+    }
+  }
+
   displayPopularRestaurants = () => {
-    const {restaurantsList, sortOption, activePage, totalPages} = this.state
+    const {
+      restaurantsList,
+      sortOption,
+      activePage,
+      totalPages,
+      searchInput,
+    } = this.state
 
     return (
       <>
@@ -105,6 +126,14 @@ class Restaurants extends Component {
           updateOption={this.updateOption}
         />
         <hr className="hr-line" />
+        <input
+          type="search"
+          className="search-bar"
+          value={searchInput}
+          placeholder="Search for a Restaurant"
+          onChange={this.searchChange}
+          onKeyDown={this.searchKeyDown}
+        />
         <ul className="restaurants-list-items">
           {restaurantsList.map(eachItem => (
             <RestaurantView key={eachItem.id} restaurantDetails={eachItem} />

@@ -7,32 +7,29 @@ import Footer from '../Footer'
 import CartItem from '../CartItem'
 import './index.css'
 
-const cartStatusConstants = {
+const statusConstants = {
   initial: 'INITIAL',
-  cartItemsFound: 'SUCCESS',
   noCartItems: 'FAILURE',
+  cartItemsFound: 'SUCCESS',
   paymentSuccess: 'PAYMENT',
 }
 
-const cartEmptyUrl =
-  'https://res.cloudinary.com/dodmtflaq/image/upload/v1668143303/PROJECT-TASTY-KITCHEN/cart-no-order_qivsro_tndzd4.png'
-
 class CartDetails extends Component {
-  state = {cartData: [], cartStatus: cartStatusConstants.initial}
+  state = {cartData: [], cartStatus: statusConstants.initial}
 
   componentDidMount() {
-    this.getTheCartData()
+    this.getCartData()
   }
 
   // get the cart data
 
-  getTheCartData = () => {
+  getCartData = () => {
     const cartData = JSON.parse(localStorage.getItem('cartData')) || []
     console.log(cartData)
     if (cartData.length === 0) {
       // console.log(cartData.length)
       this.setState({
-        cartStatus: cartStatusConstants.noCartItems,
+        cartStatus: statusConstants.noCartItems,
       })
     } else {
       const cartItems = cartData.map(each => ({
@@ -44,7 +41,7 @@ class CartDetails extends Component {
       }))
       // console.log(cartItems)
       this.setState({
-        cartStatus: cartStatusConstants.cartItemsFound,
+        cartStatus: statusConstants.cartItemsFound,
         cartData: cartItems,
       })
     }
@@ -61,7 +58,7 @@ class CartDetails extends Component {
       return eachItem
     })
     localStorage.setItem('cartData', JSON.stringify(updatedCartData))
-    this.getTheCartData()
+    this.getCartData()
   }
 
   // decrement the cart quantity
@@ -71,45 +68,37 @@ class CartDetails extends Component {
     const updatedCartData = cartData.map(eachItem => {
       if (eachItem.id === id) {
         if (eachItem.quantity > 0) {
-          console.log(eachItem.quantity)
           const updatedQuantity = eachItem.quantity - 1
-          console.log('updated:>>', updatedQuantity)
+
           return {...eachItem, quantity: updatedQuantity}
         }
       }
       return eachItem
     })
-    console.log('updatedCartData :>> ', updatedCartData)
-    // localStorage.setItem('cart_data', JSON.stringify(updatedCartData))
-    // this.getTheCartData()
     this.removeCartItem(updatedCartData)
   }
 
-  // remove the item
-
   removeCartItem = updatedData => {
-    // const cartData = JSON.parse(localStorage.getItem('cartData'))
     const updatedCartData = updatedData.filter(
       eachCartItem => eachCartItem.quantity > 0,
     )
-    console.log(updatedCartData)
     localStorage.setItem('cartData', JSON.stringify(updatedCartData))
-    this.getTheCartData()
+    this.getCartData()
   }
 
   // calculate the total amount
 
   calculateTheTotalAmount = () => {
     const {cartData} = this.state
-    // console.log(cartData)
+
     const amountList = cartData.map(each => each.quantity * each.cost)
-    // console.log(amountList)
+    // using reduce function to calculae the total...
     const totalAmount = amountList.reduce((a, b) => a + b)
     return totalAmount
   }
 
   placeOrder = () => {
-    this.setState({cartStatus: cartStatusConstants.paymentSuccess})
+    this.setState({cartStatus: statusConstants.paymentSuccess})
     localStorage.clear('cartData')
   }
 
@@ -128,9 +117,13 @@ class CartDetails extends Component {
     </div>
   )
 
-  cartEmptyView = () => (
+  noCartEmptyView = () => (
     <div className="cart-empty-view-container">
-      <img src={cartEmptyUrl} alt="empty cart" className="cart-img" />
+      <img
+        src="https://res.cloudinary.com/dodmtflaq/image/upload/v1668143303/PROJECT-TASTY-KITCHEN/cart-no-order_qivsro_tndzd4.png"
+        alt="empty cart"
+        className="cart-img"
+      />
       <h1 className="empty-heading">No Order Yet!</h1>
       <p className="cart-empty-desc">
         Your cart is empty. Add something from the menu.
@@ -143,9 +136,9 @@ class CartDetails extends Component {
     </div>
   )
 
-  cartItemsView = () => {
+  presentCartItemsView = () => {
     const {cartData} = this.state
-    // const cartData = JSON.parse(localStorage.getItem('cartData'))
+
     console.log(cartData)
     const totalAmount = this.calculateTheTotalAmount()
     return (
@@ -198,11 +191,11 @@ class CartDetails extends Component {
     const {cartStatus} = this.state
 
     switch (cartStatus) {
-      case cartStatusConstants.cartItemsFound:
-        return this.cartItemsView()
-      case cartStatusConstants.noCartItems:
-        return this.cartEmptyView()
-      case cartStatusConstants.paymentSuccess:
+      case statusConstants.cartItemsFound:
+        return this.presentCartItemsView()
+      case statusConstants.noCartItems:
+        return this.noCartEmptyView()
+      case statusConstants.paymentSuccess:
         return this.paymentSuccessfulView()
       default:
         return null

@@ -14,6 +14,15 @@ const Navbar = props => {
     history.replace('/login')
   }
 
+  // using browser property...to get the current page.
+  const getColor = current => {
+    const {history} = props
+    if (history.location.pathname === current) {
+      return '#f7931e'
+    }
+    return '#334155'
+  }
+
   return (
     <nav className="navbar-container">
       <div className="logo-name-container">
@@ -28,10 +37,14 @@ const Navbar = props => {
       </div>
       <ul className="nav-menu-list">
         <Link to="/" className="link-item">
-          <li className="nav-menu">Home</li>
+          <li className="nav-menu" style={{color: getColor('/')}}>
+            Home
+          </li>
         </Link>
         <Link to="/cart" className="link-item">
-          <li className="nav-menu">Cart</li>
+          <li className="nav-menu" style={{color: getColor('/cart')}}>
+            Cart
+          </li>
         </Link>
         <Link to="cart" className="link-item">
           <li>

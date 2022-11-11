@@ -104,7 +104,7 @@ class RestaurantDetailsRoute extends Component {
         <div className="restaurant-banner-container">
           <img src={imageUrl} alt="restaurant" className="top-img" />
           <div className="details-container">
-            <h1 className="name">{name}</h1>
+            <h1 className="rest-place-name">{name}</h1>
             <p className="info-text">{cuisine}</p>
             <p className="info-text">{location}</p>
             <div className="items-container">

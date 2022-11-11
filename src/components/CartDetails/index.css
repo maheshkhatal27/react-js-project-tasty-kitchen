@@ -111,6 +111,7 @@
   width: 100px;
   align-self: flex-end;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 .cart-empty-view-container {
   display: flex;
@@ -156,6 +157,7 @@
   color: #ffffff;
   height: 32px;
   width: 85px;
+  cursor: pointer;
 }
 .cart-success-container {
   display: flex;
@@ -207,6 +209,7 @@
   width: auto;
   padding-left: 6px;
   padding-right: 6px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 767px) {

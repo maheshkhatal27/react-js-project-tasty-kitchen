@@ -94,7 +94,7 @@ class FoodItem extends Component {
       <li className="each-food-item">
         <img src={imageUrl} alt="food item" className="food-img" />
         <div className="food-details">
-          <h1 className="menu-name">{name}</h1>
+          <h1 className="food-menu-heading">{name}</h1>
           <div className="rupee-container">
             <FaRupeeSign size={16} color="#334155" />
             <p className="cost">{cost}</p>
@@ -107,7 +107,7 @@ class FoodItem extends Component {
             <div className="food-item-counter-container">
               <button
                 type="button"
-                className="icon-button"
+                className="icon-button-sqr"
                 // testid="decrement-count"
                 onClick={this.decreaseCartCount}
               >
@@ -121,7 +121,7 @@ class FoodItem extends Component {
               </p>
               <button
                 type="button"
-                className="icon-button"
+                className="icon-button-sqr"
                 // testid="increment-count"
                 onClick={this.increaseCartCount}
               >

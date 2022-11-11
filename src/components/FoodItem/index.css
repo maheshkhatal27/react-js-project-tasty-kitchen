@@ -19,11 +19,10 @@
   align-items: flex-start;
   margin-left: 15px;
 }
-.menu-name {
+.food-menu-heading {
   font-family: DM Sans;
   font-style: normal;
   font-size: 15px;
-
   color: #334155;
   margin: 0px;
 }
@@ -74,9 +73,10 @@
   justify-content: flex-start;
   align-items: center;
 }
-.icon-button {
+.icon-button-sqr {
   background-color: transparent;
   border-width: 0px;
+  border: none;
 }
 .count-item {
   font-family: DM Sans;
@@ -85,4 +85,8 @@
   letter-spacing: 0.2px;
   color: #334155;
   margin: 0px;
+}
+
+.plus-icon {
+  border-width: 0px;
 }

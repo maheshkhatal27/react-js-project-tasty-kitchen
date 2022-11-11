@@ -31,7 +31,7 @@
 }
 
 .minus-icon {
-  border: 1px solid #334155;
+  /* border: 1px solid #334155; */
   padding: 2px;
   color: #334155;
   width: 25px;
@@ -47,7 +47,7 @@
   font-weight: 500;
 }
 .plus-icon {
-  border: 1px solid #334155;
+  /* border: 1px solid #334155;*/
   padding: 2px;
   color: #334155;
   width: 25px;

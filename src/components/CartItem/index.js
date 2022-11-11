@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {BiRupee} from 'react-icons/bi'
-import {HiOutlineMinusSm} from 'react-icons/hi'
-import {BsPlus} from 'react-icons/bs'
+import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
+
 import './index.css'
 
 class CartItem extends Component {
@@ -41,7 +41,7 @@ class CartItem extends Component {
                   className="minus-icon-container"
                   onClick={this.decrement}
                 >
-                  <HiOutlineMinusSm className="minus-icon" />
+                  <BsDashSquare className="minus-icon" />
                 </button>
                 <p
                   // testid="item-quantity"
@@ -55,7 +55,7 @@ class CartItem extends Component {
                   className="plus-icon-container"
                   onClick={this.increment}
                 >
-                  <BsPlus className="plus-icon" />
+                  <BsPlusSquare className="plus-icon" />
                 </button>
               </div>
               <div className="item-rate-container">

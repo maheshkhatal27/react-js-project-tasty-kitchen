@@ -12,6 +12,18 @@
   justify-content: center;
   align-items: center;
 }
+.search-bar {
+  background-color: transparent;
+  height: 30px;
+  max-width: 250px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #000;
+  color: #000;
+
+  align-self: flex-start;
+}
 
 @media screen and (min-width: 768px) {
   .restaurants-list-items {
