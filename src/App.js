@@ -3,6 +3,7 @@ import Login from './components/Login'
 import HomeRoute from './components/HomeRoute'
 import ProtectedRoute from './components/ProtectedRoute'
 import RestaurantDetailsRoute from './components/RestaurantDetailsRoute'
+import CartDetails from './components/CartDetails'
 import './App.css'
 
 const sortByOptions = [
@@ -27,6 +28,7 @@ const App = () => (
       path="/restaurant/:id"
       component={RestaurantDetailsRoute}
     />
+    <ProtectedRoute exact path="/cart" component={CartDetails} />
     <Redirect to="not-found" />
   </Switch>
 )

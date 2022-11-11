@@ -18,8 +18,8 @@ class FoodItem extends Component {
     const cartData = JSON.parse(localStorage.getItem('cartData')) || []
     const {foodItemDetails} = this.props
     const cartItem = cartData.filter(each => each.id === foodItemDetails.id)
-    console.log('inside find')
-    console.log(cartItem)
+
+    // console.log(cartItem)
     if (cartItem.length !== 0) {
       // console.log(cartItem)
       if (cartItem[0].quantity > 0) {

@@ -1,0 +1,129 @@
+.cart-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 95%;
+  height: 140px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding-left: 8px;
+}
+.item-img {
+  width: 136px;
+  height: 130px;
+  border-radius: 8px;
+}
+
+.cart-details-contaier {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  margin-left: 8px;
+}
+.each-item-counter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+  height: 30px;
+  width: 60px;
+}
+
+.minus-icon {
+  border: 1px solid #334155;
+  padding: 2px;
+  color: #334155;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+.count-value {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #334155;
+  font-weight: 500;
+}
+.plus-icon {
+  border: 1px solid #334155;
+  padding: 2px;
+  color: #334155;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+.minus-icon-container {
+  border: none;
+  background-color: transparent;
+}
+.plus-icon-container {
+  border: none;
+  background-color: transparent;
+}
+.item-rate-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item-rupee {
+  height: 16px;
+  width: 16px;
+  border-radius: 0px;
+  color: #ffa412;
+}
+
+.item-cost {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  color: #ffa412;
+}
+
+.cart-item-name {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #183b56;
+  width: 50px;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .each-item-counter-container {
+    width: auto;
+    margin-left: 265px;
+  }
+  .item-rate-container {
+    margin-left: 390px;
+  }
+  .item-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .minus-icon {
+    font-size: 16px;
+  }
+  .plus-icon {
+    font-size: 16px;
+  }
+  .count-value {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .cart-details-contaier {
+    display: flex;
+    flex-direction: row;
+  }
+}

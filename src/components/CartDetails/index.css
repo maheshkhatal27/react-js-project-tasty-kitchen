@@ -1,0 +1,223 @@
+.cart-bg-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.cart-items-container {
+  width: 80%;
+  min-width: 600px;
+  background-color: #f9fbfe;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  border: 1px solid rgba(11, 105, 255, 0.1);
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+.d-heading-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+.items-heading {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #475569;
+}
+.items-heading-1 {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #475569;
+  margin-left: 25px;
+}
+.cart-list-items-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style-type: none;
+}
+.horizontal-line {
+  border: 1px dashed #cbd2d9;
+  width: 100%;
+}
+.total-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+  padding: 12px;
+}
+
+.total-amt-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.total-rupee {
+  height: 18px;
+  width: 18px;
+  border-radius: 0px;
+  color: #3e4c59;
+}
+.total-amount {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  text-align: right;
+}
+.order-button {
+  position: static;
+  background: #f7931e;
+  border-radius: 8px;
+  position: static;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  color: #ffffff;
+  height: 35px;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 100px;
+  align-self: flex-end;
+  margin-bottom: 16px;
+}
+.cart-empty-view-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.cart-img {
+  width: 300px;
+}
+
+.empty-heading {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 25px;
+  text-align: center;
+  color: #1e293b;
+}
+.cart-empty-desc {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #64748b;
+}
+.order-now-button {
+  position: static;
+  background: #f7931e;
+  border-radius: 8px;
+  position: static;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  color: #ffffff;
+  height: 32px;
+  width: 85px;
+}
+.cart-success-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle-icon {
+  color: #22c55e;
+  height: 38px;
+  width: 38px;
+}
+
+.success-heading {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 20px;
+  text-align: center;
+  color: #1e293b;
+}
+.success-desc {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.home-button {
+  position: static;
+  background: #f7931e;
+  border-radius: 8px;
+  position: static;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  color: #ffffff;
+  height: 32px;
+  width: auto;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+@media screen and (min-width: 767px) {
+  .cart-items-container {
+    width: 100%;
+    min-width: 900px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .order-button {
+    margin-left: 1100px;
+  }
+}
