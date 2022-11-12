@@ -91,7 +91,7 @@ class FoodItem extends Component {
 
     const {isFound, quantity} = this.state
     return (
-      <li className="each-food-item">
+      <li className="each-food-item" testid="foodItem">
         <img src={imageUrl} alt="food item" className="food-img" />
         <div className="food-details">
           <h1 className="food-menu-heading">{name}</h1>
@@ -108,21 +108,18 @@ class FoodItem extends Component {
               <button
                 type="button"
                 className="icon-button-sqr"
-                // testid="decrement-count"
+                testid="decrement-count"
                 onClick={this.decreaseCartCount}
               >
                 <BsDashSquare className="minus-icon" />
               </button>
-              <p
-                className="count-item"
-                // testid="active-count"
-              >
+              <p className="count-item" testid="active-count">
                 {quantity}
               </p>
               <button
                 type="button"
                 className="icon-button-sqr"
-                // testid="increment-count"
+                testid="increment-count"
                 onClick={this.increaseCartCount}
               >
                 <BsPlusSquare className="plus-icon" />

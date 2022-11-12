@@ -6,10 +6,10 @@ import './index.css'
 const RestaurantCard = props => {
   const {restaurantDetails} = props
   const {id, cuisine, imageUrl, name, rating, totalReviews} = restaurantDetails
-  // testid="restaurant-item"
+  // testid="restaurant-item" for list
   return (
     <Link to={`/restaurant/${id}`} className="link">
-      <li className="restaurant-container">
+      <li className="restaurant-container" testid="restaurant-item">
         <img src={imageUrl} alt="restaurant" className="img-rest" />
         <div className="restaurant-details-container">
           <h1 className="name">{name}</h1>

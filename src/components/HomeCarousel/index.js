@@ -36,7 +36,7 @@ class HomeCarousel extends Component {
   // testid="restaurants-offers-loader"
 
   displayLoaderView = () => (
-    <div className="offers-images-loader">
+    <div className="offers-images-loader" testid="restaurants-offers-loader">
       <Loader type="ThreeDots" color="#F7931E" height={50} width={50} />
     </div>
   )

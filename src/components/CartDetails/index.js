@@ -165,10 +165,7 @@ class CartDetails extends Component {
               <h1 className="heading-order">Order Total:</h1>
               <div className="total-amt-container">
                 <BiRupee className="total-rupee" />
-                <p
-                  // testid="total-price"
-                  className="total-amount"
-                >
+                <p testid="total-price" className="total-amount">
                   {totalAmount}.00
                 </p>
               </div>

@@ -70,7 +70,7 @@ class Login extends Component {
         <div className="login-bg-container">
           <img
             src="https://res.cloudinary.com/dodmtflaq/image/upload/v1667883344/PROJECT-TASTY-KITCHEN/Rectangle_1457login-mb-pg_gp6gx2.jpg"
-            alt="website login"
+            alt="website logo"
             className="login-img"
           />
           <div className="bg-lg-container">

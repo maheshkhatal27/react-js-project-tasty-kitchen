@@ -144,11 +144,13 @@ class Restaurants extends Component {
             type="button"
             className="pg-button"
             onClick={this.onClickDecrementPages}
-            // testid="pagination-left-button" ,testid="active-page-number" for p
+            testid="pagination-left-button"
           >
             <RiArrowDropLeftLine size={20} />
           </button>
-          <p className="page-count">{activePage}</p>
+          <p className="page-count" testid="active-page-number">
+            {activePage}
+          </p>
           <span
             className="page-count"
             style={{marginLeft: '5px', marginRight: '5px'}}
@@ -160,7 +162,7 @@ class Restaurants extends Component {
             type="button"
             className="pg-button"
             onClick={this.onClickIncrementPages}
-            // testid="pagination-right-button"
+            testid="pagination-right-button"
           >
             <RiArrowDropRightLine size={20} />
           </button>
@@ -171,7 +173,7 @@ class Restaurants extends Component {
 
   //  testid="restaurants-list-loader"
   displayLoader = () => (
-    <div className="carousel-loader">
+    <div className="carousel-loader" testid="restaurants-list-loader">
       <Loader type="ThreeDots" color="#F7931E" height={50} width={50} />
     </div>
   )
